@@ -70,10 +70,10 @@ function entityAdded(entity)
 
     var name = getName(entity)
 
-    if (name == "")
-    {
-         return;
-    }
+//    if (name == "")
+//    {
+//         return;
+//    }
 
     clientMessage(name + " spawned at " + Entity.getX(entity) + ", " + Entity.getX(entity) + ", " + Entity.getZ(entity));
 }
