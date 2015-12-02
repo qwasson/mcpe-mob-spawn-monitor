@@ -1,12 +1,11 @@
 //Is the script active?
-var active = false;
+var spawnsActive = false;
 
 //A variable to store the mcpe activity
 var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 
 // Are we showing chunk coords
 var showingSpawns = false;
-var spawnsActive  = false;
 
 var updateLabel = false;
 
@@ -22,8 +21,39 @@ function procCmd(cmd) {
     );
 }
 
+function main(p) {
+    switch(p[0]) {
+        case "help":
+        case "?":
+            switch(p[1]) {
+                case "spawn":
+                case "spawns":
+                    showHelp("spawns", "Shows spawns", "", "");
+                    break;
+                case "help":
+                case "?":
+                    showHelp("help", "Shows help", "", "");
+                    break;
+            }
+            break;
+        case "spawn":
+        case "spawns":
+            if(showingSpawns) {
+                dismissChunks();
+                clientMessage("Showing spawns is inactive!");
+                showingSpawns = false;
+                
+            }
+            else {
+                clientMessage("Showing spawns is active!");
+                showingSpawns = true;
+            }
+            break;
+    }
+}
+
 function modTick() {
-    if(active === false) {
+    if(spawnsActive === false) {
 
         clientMessage("Activating spawns!");
 
@@ -41,11 +71,11 @@ function entityAdded(entity)
     var name = getName(entity)
 
     if name == ""
-     {
+    {
          return;
-     }
+    }
 
-clientMessage(name + " spawned at " + Entity.getX(entity) + ", " + Entity.getX(entity) + ", " + Entity.getZ(entity));
+    clientMessage(name + " spawned at " + Entity.getX(entity) + ", " + Entity.getX(entity) + ", " + Entity.getZ(entity));
 }
 
 function getName(entity) {
