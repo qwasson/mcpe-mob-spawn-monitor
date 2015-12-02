@@ -70,7 +70,7 @@ function entityAdded(entity)
 
     var name = getName(entity)
 
-    if name == ""
+    if (name == "")
     {
          return;
     }
