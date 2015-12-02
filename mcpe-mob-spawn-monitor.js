@@ -79,7 +79,7 @@ function entityAdded(entity)
 }
 
 function getName(entity) {
-    switch (Entity.getEntityTypeId(entity);) {
+    switch (Entity.getEntityTypeId(entity)) {
     case EntityType.CAVE_SPIDER:
         return "cave spider":
     case EntityType.CREEPER:
