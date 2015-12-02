@@ -81,25 +81,25 @@ function entityAdded(entity)
 function getName(entity) {
     switch (Entity.getEntityTypeId(entity)) {
     case EntityType.CAVE_SPIDER:
-        return "cave spider":
+        return "cave spider";
     case EntityType.CREEPER:
-        return "creeper":
+        return "creeper";
     case EntityType.GHAST:
-        return "ghast":
+        return "ghast";
     case EntityType.PIG_ZOMBIE:
-        return "pig zombie":
+        return "pig zombie";
     case EntityType.SILVERFISH:
-        return "silverfish":
+        return "silverfish";
     case EntityType.SKELETON:
-        return "skeleton":
+        return "skeleton";
     case EntityType.SLIME:
-        return "slime":
+        return "slime";
     case EntityType.SPIDER:
-        return "spider":
+        return "spider";
     case EntityType.ZOMBIE:
-        return "zombie":
+        return "zombie";
     case EntityType.ZOMBIE_VILLAGER:
-        return "zombie villager":
+        return "zombie villager";
     default:
         return "";
     }
