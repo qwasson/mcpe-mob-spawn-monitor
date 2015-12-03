@@ -65,6 +65,8 @@ function modTick() {
 
 function entityAdded(entity)
 {
+    clientMessage("entityAdded");
+    
     if (!spawnsActive) 
     { return; }
 
@@ -76,6 +78,11 @@ function entityAdded(entity)
 //    }
 
     clientMessage(name + " spawned at " + Entity.getX(entity) + ", " + Entity.getX(entity) + ", " + Entity.getZ(entity));
+}
+
+function entityRemoved(entity)
+{
+    clientMessage("entityRemoved");
 }
 
 function getName(entity) {
