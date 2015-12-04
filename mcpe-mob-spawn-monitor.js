@@ -77,7 +77,18 @@ function entityAddedHook(entity)
          return;
     }
 
-    clientMessage(name + " spawned at " + parseInt(Entity.getX(entity)) + ", " + parseInt(Entity.getY(entity)) + ", " + parseInt(Entity.getZ(entity)));
+    var entityX = Entity.getX(entity));
+    var entityZ = Entity.getZ(entity));
+
+    var playerX = Player.getX();
+    var playerZ = Player.getZ();
+
+    clientMessage(name + " spawned at " + 
+        parseInt(Entity.getX(entity)) + ", " + 
+        parseInt(Entity.getY(entity)) + ", " + 
+        parseInt(Entity.getZ(entity))+
+        "[" + abs(playerX - entityX) + ", " + abs(playerZ - entityZ) + "]"
+);
 }
 
 function entityRemovedHook(entity)
