@@ -87,7 +87,9 @@ function entityAddedHook(entity)
         parseInt(Entity.getX(entity)) + ", " + 
         parseInt(Entity.getY(entity)) + ", " + 
         parseInt(Entity.getZ(entity))+
-        "[" + Math.abs(playerX - entityX) + ", " + Math.abs(playerZ - entityZ) + "]"
+        "[" + 
+        parseInt(Math.abs(playerX - entityX)) + ", " + 
+        parseInt(Math.abs(playerZ - entityZ)) + "]"
 );
 }
 
@@ -113,7 +115,9 @@ function entityRemovedHook(entity)
         parseInt(Entity.getX(entity)) + ", " + 
         parseInt(Entity.getY(entity)) + ", " + 
         parseInt(Entity.getZ(entity))+
-        "[" + Math.abs(playerX - entityX) + ", " + Math.abs(playerZ - entityZ) + "]"
+        "[" + 
+        parseInt(Math.abs(playerX - entityX)) + ", " + 
+        parseInt(Math.abs(playerZ - entityZ)) + "]"
 );    
 }
 
