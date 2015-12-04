@@ -63,24 +63,24 @@ function modTick() {
 }
 
 
-function entityAdded(entity)
+function entityAddedHook(entity)
 {
-    clientMessage("entityAdded");
+    //clientMessage("entityAdded");
     
     if (!spawnsActive) 
     { return; }
 
     var name = getName(entity)
 
-//    if (name == "")
-//    {
-//         return;
-//    }
+    if (name == "")
+    {
+         return;
+    }
 
     clientMessage(name + " spawned at " + Entity.getX(entity) + ", " + Entity.getX(entity) + ", " + Entity.getZ(entity));
 }
 
-function entityRemoved(entity)
+function entityRemovedHook(entity)
 {
     clientMessage("entityRemoved");
 }
