@@ -77,8 +77,8 @@ function entityAddedHook(entity)
          return;
     }
 
-    var entityX = Entity.getX(entity));
-    var entityZ = Entity.getZ(entity));
+    var entityX = Entity.getX(entity);
+    var entityZ = Entity.getZ(entity);
 
     var playerX = Player.getX();
     var playerZ = Player.getZ();
@@ -103,8 +103,8 @@ function entityRemovedHook(entity)
          return;
     }
 
-var entityX = Entity.getX(entity));
-    var entityZ = Entity.getZ(entity));
+    var entityX = Entity.getX(entity);
+    var entityZ = Entity.getZ(entity);
 
     var playerX = Player.getX();
     var playerZ = Player.getZ();
