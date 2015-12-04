@@ -77,11 +77,22 @@ function entityAddedHook(entity)
          return;
     }
 
-    clientMessage(name + " spawned at " + Entity.getX(entity) + ", " + Entity.getX(entity) + ", " + Entity.getZ(entity));
+    clientMessage(name + " spawned at " + parseInt(Entity.getX(entity)) + ", " + parseInt(Entity.getY(entity)) + ", " + parseInt(Entity.getZ(entity)));
 }
 
 function entityRemovedHook(entity)
 {
+    if (!spawnsActive) 
+    { return; }
+
+    var name = getName(entity)
+
+    if (name == "")
+    {
+         return;
+    }
+
+    clientMessage(name + " removed at " + parseInt(Entity.getX(entity)) + ", " + parseInt(Entity.getY(entity)) + ", " + parseInt(Entity.getZ(entity)));
     clientMessage("entityRemoved");
 }
 
