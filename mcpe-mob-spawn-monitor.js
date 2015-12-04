@@ -103,8 +103,18 @@ function entityRemovedHook(entity)
          return;
     }
 
-    clientMessage(name + " removed at " + parseInt(Entity.getX(entity)) + ", " + parseInt(Entity.getY(entity)) + ", " + parseInt(Entity.getZ(entity)));
-    clientMessage("entityRemoved");
+var entityX = Entity.getX(entity));
+    var entityZ = Entity.getZ(entity));
+
+    var playerX = Player.getX();
+    var playerZ = Player.getZ();
+
+    clientMessage(name + " removed at " + 
+        parseInt(Entity.getX(entity)) + ", " + 
+        parseInt(Entity.getY(entity)) + ", " + 
+        parseInt(Entity.getZ(entity))+
+        "[" + abs(playerX - entityX) + ", " + abs(playerZ - entityZ) + "]"
+);    
 }
 
 function getName(entity) {
