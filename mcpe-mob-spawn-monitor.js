@@ -77,20 +77,31 @@ function entityAddedHook(entity)
          return;
     }
 
-    var entityX = Entity.getX(entity);
-    var entityZ = Entity.getZ(entity);
+    var entityX = parseInt(Entity.getX(entity));
+    var entityY = parseInt(Entity.getY(entity));
+    var entityZ = parseInt(Entity.getZ(entity));
 
-    var playerX = Player.getX();
-    var playerZ = Player.getZ();
+    var playerX = parseInt(Player.getX());
+    var playerY = parseInt(Player.getY());
+    var playerZ = parseInt(Player.getZ());
 
-    clientMessage(name + " spawned at " + 
-        parseInt(Entity.getX(entity)) + ", " + 
-        parseInt(Entity.getY(entity)) + ", " + 
-        parseInt(Entity.getZ(entity))+
+    var dX = Math.abs(playerX - entityX);
+    var dY = Math.abs(playerY - entityY);
+    var dZ = Math.abs(playerZ - entityZ);
+
+    var xY  = Math.sqrt((dX * dX) + (dY * dY)):
+    var xYZ = Math.sqrt((xY * xY) + (dZ * dZ)):
+
+    clientMessage(name + " spawned " + 
+        //entityX + ", " + 
+        //entityY + ", " + 
+        //entityZ +
         "[" + 
-        parseInt(Math.abs(playerX - entityX)) + ", " + 
-        parseInt(Math.abs(playerZ - entityZ)) + "]"
-);
+        dX + ", " + 
+        dY + ", " + 
+        dZ + "]" +
+        " (" + xYZ + ")";   
+    );
 }
 
 function entityRemovedHook(entity)
