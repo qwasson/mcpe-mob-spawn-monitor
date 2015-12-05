@@ -100,7 +100,7 @@ function entityAddedHook(entity)
         dX + ", " + 
         dY + ", " + 
         dZ + "]" +
-        " (" + xYZ + ")";   
+        " (" + xYZ + ")" 
     );
 }
 
