@@ -89,8 +89,8 @@ function entityAddedHook(entity)
     var dY = Math.abs(playerY - entityY);
     var dZ = Math.abs(playerZ - entityZ);
 
-    var xY  = Math.sqrt((dX * dX) + (dY * dY)):
-    var xYZ = Math.sqrt((xY * xY) + (dZ * dZ)):
+    var xY  = Math.sqrt((dX * dX) + (dY * dY));
+    var xYZ = Math.sqrt((xY * xY) + (dZ * dZ));
 
     clientMessage(name + " spawned " + 
         //entityX + ", " + 
