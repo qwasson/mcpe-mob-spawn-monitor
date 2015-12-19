@@ -65,6 +65,11 @@ function modTick() {
 
 function entityAddedHook(entity)
 {
+    describe(entity, "added")
+}
+
+function describe(entity, verb)
+{
     //clientMessage("entityAdded");
     
     if (!spawnsActive) 
@@ -90,9 +95,9 @@ function entityAddedHook(entity)
     var dZ = Math.abs(playerZ - entityZ);
 
     var xY  = Math.sqrt((dX * dX) + (dY * dY));
-    var xYZ = Math.sqrt((xY * xY) + (dZ * dZ));
+    var xYZ = parseInt(Math.sqrt((xY * xY) + (dZ * dZ)));
 
-    clientMessage(name + " spawned " + 
+    clientMessage(name + " " + verb + " " + 
         //entityX + ", " + 
         //entityY + ", " + 
         //entityZ +
@@ -106,44 +111,21 @@ function entityAddedHook(entity)
 
 function entityRemovedHook(entity)
 {
-    if (!spawnsActive) 
-    { return; }
-
-    var name = getName(entity)
-
-    if (name == "")
-    {
-         return;
-    }
-
-    var entityX = Entity.getX(entity);
-    var entityZ = Entity.getZ(entity);
-
-    var playerX = Player.getX();
-    var playerZ = Player.getZ();
-
-    clientMessage(name + " removed at " + 
-        parseInt(Entity.getX(entity)) + ", " + 
-        parseInt(Entity.getY(entity)) + ", " + 
-        parseInt(Entity.getZ(entity))+
-        "[" + 
-        parseInt(Math.abs(playerX - entityX)) + ", " + 
-        parseInt(Math.abs(playerZ - entityZ)) + "]"
-);    
+    describe(entity, "removed")  
 }
 
 function getName(entity) {
     switch (Entity.getEntityTypeId(entity)) {
     case EntityType.CAVE_SPIDER:
-        return "cave spider";
+        return "cv spidr";
     case EntityType.CREEPER:
         return "creeper";
     case EntityType.GHAST:
         return "ghast";
     case EntityType.PIG_ZOMBIE:
-        return "pig zombie";
+        return "pig zom";
     case EntityType.SILVERFISH:
-        return "silverfish";
+        return "slvrfish";
     case EntityType.SKELETON:
         return "skeleton";
     case EntityType.SLIME:
@@ -153,7 +135,7 @@ function getName(entity) {
     case EntityType.ZOMBIE:
         return "zombie";
     case EntityType.ZOMBIE_VILLAGER:
-        return "zombie villager";
+        return "zomvill";
     default:
         return "";
     }
